@@ -1,0 +1,103 @@
+{
+  "project_name": "foodapp",
+  "test_plan": [
+    {
+      "id": "test_001",
+      "name": "App Launch Test",
+      "description": "Verify that the Flutter food app launches successfully",
+      "steps": [
+        "Launch the Flutter app",
+        "Verify the main screen loads with gradient background",
+        "Check if search bar is visible",
+        "Verify recipe categories are displayed"
+      ],
+      "expected_result": "App should launch without errors and display the home screen"
+    },
+    {
+      "id": "test_002", 
+      "name": "Search Functionality Test",
+      "description": "Test the recipe search feature using TheMealDB API",
+      "steps": [
+        "Enter a recipe name in the search bar (e.g., 'pizza')",
+        "Tap the search icon or press enter",
+        "Wait for API response",
+        "Verify recipe results are displayed"
+      ],
+      "expected_result": "Search should return recipe results with images and details"
+    },
+    {
+      "id": "test_003",
+      "name": "Recipe Category Navigation Test", 
+      "description": "Test navigation through recipe categories",
+      "steps": [
+        "Scroll to the recipe categories section",
+        "Tap on a category (e.g., 'Pizza', 'Burger')",
+        "Verify navigation to search results page",
+        "Check if results match the selected category"
+      ],
+      "expected_result": "Should navigate to search page with category-specific results"
+    },
+    {
+      "id": "test_004",
+      "name": "Recipe Detail View Test",
+      "description": "Test opening recipe details in WebView",
+      "steps": [
+        "Search for a recipe",
+        "Tap on a recipe card",
+        "Verify WebView opens with recipe details",
+        "Check if external URL loads correctly"
+      ],
+      "expected_result": "WebView should open and display recipe details from external source"
+    },
+    {
+      "id": "test_005",
+      "name": "UI Responsiveness Test",
+      "description": "Test UI components and layout responsiveness",
+      "steps": [
+        "Check search bar styling and functionality",
+        "Verify recipe cards display correctly",
+        "Test scrolling behavior",
+        "Check gradient background rendering"
+      ],
+      "expected_result": "UI should be responsive and visually appealing"
+    },
+    {
+      "id": "test_006",
+      "name": "Error Handling Test",
+      "description": "Test app behavior with invalid inputs and network issues",
+      "steps": [
+        "Try searching with empty input",
+        "Test with invalid recipe names",
+        "Check error messages display correctly",
+        "Verify app doesn't crash on errors"
+      ],
+      "expected_result": "App should handle errors gracefully with appropriate messages"
+    },
+    {
+      "id": "test_007",
+      "name": "Cross-Platform WebView Test",
+      "description": "Test WebView functionality on different platforms",
+      "steps": [
+        "Open a recipe detail page",
+        "Verify WebView loads correctly on current platform",
+        "Test navigation within WebView",
+        "Check if external links work"
+      ],
+      "expected_result": "WebView should work correctly on the current platform"
+    },
+    {
+      "id": "test_008",
+      "name": "Navigation Flow Test",
+      "description": "Test complete user journey through the app",
+      "steps": [
+        "Start from home screen",
+        "Search for a recipe",
+        "Select a recipe from results",
+        "View recipe details",
+        "Navigate back to search",
+        "Return to home screen"
+      ],
+      "expected_result": "Complete navigation flow should work smoothly without issues"
+    }
+  ]
+}

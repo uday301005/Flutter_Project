@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "648243138609",
+    "project_id": "masterchef-8571b",
+    "storage_bucket": "masterchef-8571b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648243138609:android:1a2a0e07a33e0d5ab6c510",
+        "android_client_info": {
+          "package_name": "com.example.foodapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFF518QUAxOpUua8m2YpfNqhxZ_rkDD-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
