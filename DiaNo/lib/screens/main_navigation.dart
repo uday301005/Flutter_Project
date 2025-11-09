@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../providers/auth_provider.dart';
 import 'dashboard_screen.dart';
 import 'food_analysis_screen.dart';
 import 'history_screen.dart';
 import 'settings_screen.dart';
+import 'retinopathy_detection_screen.dart';
 
 class MainNavigation extends StatefulWidget {
   const MainNavigation({super.key});
@@ -19,6 +18,7 @@ class _MainNavigationState extends State<MainNavigation> {
   final List<Widget> _screens = [
     const DashboardScreen(),
     const FoodAnalysisScreen(),
+    const RetinopathyDetectionScreen(),
     const HistoryScreen(),
     const SettingsScreen(),
   ];

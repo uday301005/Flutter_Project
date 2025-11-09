@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
+// import 'package:firebase_core/firebase_core.dart';
+import 'registration.dart';
 
-class First extends StatefulWidget {
+void main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp();
+  runApp(const First());
+}
+
+class First extends StatelessWidget {
   const First({super.key});
 
   @override
-  State<First> createState() => _FirstState();
-}
-class _FirstState extends State<First> {
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-          child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("lib/components/fully.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ), 
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Firebase Signup',
+      home: Registration(),
     );
   }
 }

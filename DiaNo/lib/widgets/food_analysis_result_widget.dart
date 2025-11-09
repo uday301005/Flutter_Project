@@ -112,7 +112,7 @@ class FoodAnalysisResultWidget extends StatelessWidget {
               Expanded(
                 child: _buildNutritionCard(
                   'Calories',
-                  '${result.calories.toStringAsFixed(0)}',
+                  result.calories.toStringAsFixed(0),
                   Icons.whatshot,
                   Colors.orange,
                 ),

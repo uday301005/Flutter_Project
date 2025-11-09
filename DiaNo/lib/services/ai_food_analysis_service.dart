@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'dart:math';
-import 'package:image/image.dart' as img;
 
 class FoodAnalysisResult {
   final String foodName;

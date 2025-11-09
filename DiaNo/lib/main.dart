@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'screens/splash_screen.dart';
-import 'screens/auth/login_screen.dart';
-import 'screens/main_navigation.dart';
 import 'providers/auth_provider.dart';
 import 'providers/sugar_tracker_provider.dart';
 import 'providers/notification_provider.dart';

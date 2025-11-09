@@ -28,7 +28,15 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera access to take photos of the eye for retinopathy detection</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need photo library access to select eye photos for retinopathy detection</string>
 	<key>UISupportedInterfaceOrientations</key>
+	<key>NSCameraUsageDescription</key>
+    <string>We need camera access to take photos of the eye for retinopathy detection</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We need photo library access to select eye photos for retinopathy detection</string>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>

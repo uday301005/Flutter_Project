@@ -95,6 +95,6 @@ class Food {
 
   @override
   String toString() {
-    return 'Food{name: $name, category: $category, sugar: ${sugarContentPer100g}g/100g, calories: ${caloriesPer100g}/100g}';
+    return 'Food{name: $name, category: $category, sugar: ${sugarContentPer100g}g/100g, calories: $caloriesPer100g/100g}';
   }
 }

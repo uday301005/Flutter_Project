@@ -107,9 +107,9 @@ class NotificationProvider with ChangeNotifier {
     if (percentage >= 100) {
       message = '⚠️ You have exceeded your daily sugar limit!';
     } else if (percentage >= 80) {
-      message = '⚠️ You are approaching your daily sugar limit (${percentage}%)';
+      message = '⚠️ You are approaching your daily sugar limit ($percentage%)';
     } else if (percentage >= 60) {
-      message = '📊 You have consumed ${percentage}% of your daily sugar limit';
+      message = '📊 You have consumed $percentage% of your daily sugar limit';
     } else {
       return; // Don't show notification for low percentages
     }

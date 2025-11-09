@@ -169,7 +169,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             Expanded(
               child: _buildStatCard(
                 'Calories',
-                '${sugarProvider.todayCalories.toStringAsFixed(0)}',
+                sugarProvider.todayCalories.toStringAsFixed(0),
                 Icons.whatshot,
                 const Color(0xFFFF9800),
               ),
@@ -433,7 +433,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   },
                 ),
               );
-            }).toList(),
+            }),
             if (sugarProvider.todayFoodItems.length > 3)
               TextButton(
                 onPressed: () {

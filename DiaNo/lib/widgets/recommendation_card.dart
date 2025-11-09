@@ -148,7 +148,7 @@ class RecommendationCard extends StatelessWidget {
                 ],
               ),
             );
-          }).toList(),
+          }),
         ],
       ),
     );
