@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Graphify JSON Viewer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    #toolbar { padding: 16px; background: #1a202c; color: #fff; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    #toolbar label, #toolbar button { margin: 0; }
+    #toolbar input { color: #000; }
+    #status { font-size: 0.95rem; }
+    #graph { width: 100vw; height: calc(100vh - 84px); background: #f6f8fa; }
+    .info { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .info strong { color: #fbbf24; }
+    .note { color: #94a3b8; font-size: 0.9rem; }
+  </style>
+  <script type="text/javascript" src="vis-network.min.js"></script>
+</head>
+<body>
+  <div id="toolbar">
+    <div class="info">
+      <label for="jsonFile">Choose Graphify JSON file:</label>
+      <input id="jsonFile" type="file" accept=".json" />
+      <button id="resetBtn">Reset</button>
+    </div>
+    <div id="status">No file loaded.</div>
+  </div>
+  <div id="graph"></div>
+  <script>
+    const fileInput = document.getElementById('jsonFile');
+    const status = document.getElementById('status');
+    const resetBtn = document.getElementById('resetBtn');
+    const container = document.getElementById('graph');
+    let network = null;
+
+    function showStatus(text, isError = false) {
+      status.textContent = text;
+      status.style.color = isError ? '#f87171' : '#d1d5db';
+    }
+
+    function loadGraph(json) {
+      if (!json.nodes || !json.edges) {
+        showStatus('Invalid Graphify JSON: missing nodes or edges.', true);
+        return;
+      }
+
+      const nodes = new vis.DataSet(json.nodes.map((node, index) => {
+        const labelText = node.label || node.id || `node-${index}`;
+        const subtitle = node.source_file ? `${node.source_file}${node.source_location ? ':' + node.source_location : ''}` : '';
+        return {
+          id: node.id || index,
+          label: subtitle ? `${labelText}\n${subtitle}` : labelText,
+          title: subtitle ? `Source: ${subtitle}` : labelText,
+          shape: 'box',
+          font: { multi: 'html' },
+          color: { background: '#eff6ff', border: '#3b82f6' }
+        };
+      }));
+
+      const edges = new vis.DataSet(json.edges.map((edge, index) => ({
+        id: edge.id || `e${index}`,
+        from: edge.source,
+        to: edge.target,
+        label: edge.relation ? edge.relation : '',
+        title: edge.context ? `${edge.relation || 'edge'} (${edge.context})` : edge.relation || 'edge',
+        arrows: 'to',
+        color: { color: '#64748b' }
+      })));
+
+      const data = { nodes, edges };
+      const options = {
+        layout: { improvedLayout: true },
+        physics: { stabilization: true, barnesHut: { gravitationalConstant: -20000, springLength: 120, springConstant: 0.06 } },
+        interaction: { hover: true, tooltipDelay: 100, zoomView: true, dragView: true },
+        edges: { smooth: { type: 'cubicBezier', forceDirection: 'horizontal', roundness: 0.25 } }
+      };
+
+      if (network) {
+        network.destroy();
+      }
+      network = new vis.Network(container, data, options);
+      showStatus(`Loaded graph with ${nodes.length} nodes and ${edges.length} edges.`);
+    }
+
+    function readFile(file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const json = JSON.parse(reader.result);
+          loadGraph(json);
+        } catch (err) {
+          showStatus('Error parsing JSON: ' + err.message, true);
+        }
+      };
+      reader.onerror = () => {
+        showStatus('Failed to read file.', true);
+      };
+      reader.readAsText(file);
+    }
+
+    fileInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        showStatus('Loading ' + file.name + '...');
+        readFile(file);
+      }
+    });
+
+    resetBtn.addEventListener('click', () => {
+      fileInput.value = '';
+      if (network) {
+        network.destroy();
+        network = null;
+      }
+      container.innerHTML = '';
+      showStatus('No file loaded.');
+    });
+  </script>
+</body>
+</html>

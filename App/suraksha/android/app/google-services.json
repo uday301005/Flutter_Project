@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "490498843850",
+    "project_id": "suraksha-288dc",
+    "storage_bucket": "suraksha-288dc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490498843850:android:4650f8654c2c7c653bc033",
+        "android_client_info": {
+          "package_name": "com.surksha.app.suraksha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490498843850-5nmnnc2dfbqeuaekcoagqjs57vpdmrss.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6AKpCDccuJ_gsSEUszy7l1kI6AjByJ28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "490498843850-5nmnnc2dfbqeuaekcoagqjs57vpdmrss.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
