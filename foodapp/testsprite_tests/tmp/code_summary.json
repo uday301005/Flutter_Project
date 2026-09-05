@@ -1,0 +1,45 @@
+{
+  "tech_stack": ["dart", "flutter", "http", "webview_flutter", "webview_windows"],
+  "features": [
+    {
+      "name": "Recipe Search",
+      "description": "Search functionality to find recipes by dish name using TheMealDB API",
+      "files": ["lib/home.dart", "lib/Search.dart"]
+    },
+    {
+      "name": "Recipe Model",
+      "description": "Data model for recipe information including name, image, calories, and URL",
+      "files": ["lib/model.dart"]
+    },
+    {
+      "name": "Recipe View",
+      "description": "WebView component to display recipe details from external URLs",
+      "files": ["lib/recipe_view.dart"]
+    },
+    {
+      "name": "Home Screen",
+      "description": "Main application screen with search bar, recipe categories, and recipe list",
+      "files": ["lib/home.dart"]
+    },
+    {
+      "name": "App Entry Point",
+      "description": "Main application entry point with MaterialApp configuration",
+      "files": ["lib/main.dart"]
+    },
+    {
+      "name": "HTTP API Integration",
+      "description": "Integration with TheMealDB API for fetching recipe data",
+      "files": ["lib/home.dart", "lib/Search.dart"]
+    },
+    {
+      "name": "Cross-Platform WebView",
+      "description": "WebView implementation for both mobile and Windows platforms",
+      "files": ["lib/recipe_view.dart"]
+    },
+    {
+      "name": "UI Components",
+      "description": "Custom UI components including search bar, recipe cards, and category cards",
+      "files": ["lib/home.dart", "lib/Search.dart"]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "init",
+  "scope": "codebase",
+  "type": "frontend",
+  "localEndpoint": "http://localhost:5173",
+  "serverPort": 51273,
+  "executionArgs": {
+    "projectName": "foodapp",
+    "projectPath": "d:/flutterproject/foodapp",
+    "testIds": [],
+    "additionalInstruction": "Test the Flutter food app with focus on recipe search functionality, UI components, and cross-platform WebView features",
+    "envs": {
+      "API_KEY": ""
+    }
+  }
+}
